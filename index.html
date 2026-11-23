@@ -116,7 +116,6 @@
       <span class="logo"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M7 4.5v15l12-7.5z"/></svg></span>
       EIP 使用者影音教學
     </a>
-    <a class="ext" href="https://www.edetw.com/elearning-uofuser/" target="_blank" rel="noopener">原始教學網站 ↗</a>
   </div>
 </header>
 
@@ -129,7 +128,7 @@
         <h1>開元食品 EIP 系統操作教學指引</h1>
         <p class="sub">請於下方輸入關鍵字快速查找需要的影片教程</p>
       </div>
-      <div class="count"><strong id="heroCount">54</strong>部教學影片</div>
+      <div class="count"><strong id="heroCount">43</strong>部教學影片</div>
     </div>
     <label class="search">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
@@ -142,7 +141,7 @@
     <aside>
       <div class="side-title">系統分類</div>
       <button class="cat" data-sys="ALL" aria-pressed="true">全部影片 <span class="pill" data-c="ALL"></span></button>
-      <button class="cat" data-sys="EIP" aria-pressed="false">EIP 企業資訊入口 <span class="pill" data-c="EIP"></span></button>
+      <button class="cat" data-sys="EIP" aria-pressed="false">首頁內容 <span class="pill" data-c="EIP"></span></button>
       <button class="cat" data-sys="BPM" aria-pressed="false">BPM 簽核流程 <span class="pill" data-c="BPM"></span></button>
       <button class="cat" data-sys="DMS" aria-pressed="false">DMS 文管系統 <span class="pill" data-c="DMS"></span></button>
       <div class="help">
@@ -154,7 +153,7 @@
     <section class="panel">
       <div class="panel-head">
         <div><h2 id="listTitle">全部教學影片</h2><small>依官方頁面順序排列</small></div>
-        <span class="n"><span id="shown">54</span> 影片</span>
+        <span class="n"><span id="shown">43</span> 影片</span>
       </div>
       <div id="list"></div>
       <div class="empty" id="empty">找不到符合的影片，換個關鍵字試試看。</div>
@@ -176,25 +175,17 @@ const V = [
   // 格式：["系統(EIP/BPM/DMS)", "小分類", "影片標題", "YouTube 影片ID", "一句說明"],
   // YouTube 影片ID = youtu.be/ 後面那串，例如 https://youtu.be/atojgC2kS3k → atojgC2kS3k
   // 新增影片：複製一行改內容；刪除影片：整行刪掉（注意每行結尾的逗號）
+  // 第一格 "EIP" / "BPM" / "DMS" 是分類代碼，不要刪也不要改
   ["EIP", "公告", "公告－新增公告", "atojgC2kS3k", "編輯公告內容，設定主題、發布對象、通知與上下架時間。"],
   ["EIP", "公告", "公告－發布審核", "ZQsP26D1gms", "了解公告模組審核，以及透過電子簽核申請單發布公告。"],
   ["EIP", "公告", "公告－瀏覽者", "41PbSFFS6iQ", "查看已發布公告，並使用推薦與收藏等功能。"],
   ["EIP", "公告", "公告－瀏覽紀錄、刪除與修改", "rycy7tEFUGA", "查閱公告瀏覽紀錄，修改或刪除已發布內容。"],
-  ["EIP", "討論區", "討論區", "7sdRv5868cY", "新增與回覆主題，並認識鎖定、置頂、精華與文章搬移。"],
-  ["EIP", "場地設備", "場地借用", "N9eeUiA312k", "快速預約與借用會議場地。"],
-  ["EIP", "場地設備", "行事曆借用", "0hgMoKOA55g", "從行事曆新增設備、公務車等非會議場地借用。"],
-  ["EIP", "場地設備", "設備借用申請單", "CuMnC8xA7mI", "透過電子簽核中的設備借用申請單完成預約。"],
-  ["EIP", "場地設備", "週期性借用", "fquRX1Mwc9U", "建立固定週期重複發生的場地或設備借用。"],
-  ["EIP", "場地設備", "保管人借用管理", "UZepDTJOlKI", "保管人處理借出、歸還或拒絕已預約的設備。"],
-  ["EIP", "問卷", "新增問卷基本設定", "cRxyYqHFXNY", "設定問卷名稱、記名方式、重複填寫與統計結果。"],
-  ["EIP", "問卷", "新增問卷題目設定", "YebK2_Kdvn8", "逐題建立、複製現有問卷，或使用 Excel 匯入題目。"],
-  ["EIP", "問卷", "新增問卷調查時間與對象", "Q_3ng0-Cwv8", "設定調查對象、調查期間、結果公布與通知時間。"],
-  ["EIP", "問卷", "問卷發布審核", "OA-VpGx7V1U", "審核需要核准後才能上架的問卷。"],
-  ["EIP", "問卷", "問卷填寫者", "I_fSdT_7_s0", "填寫、修改或取消問卷，並查看開放的統計結果。"],
-  ["EIP", "問卷", "問卷發布者功能", "Kb284mtJKAQ", "回收填答、查看圖表、設定觀看權限並匯出資料。"],
-  ["EIP", "內容維護", "相簿維護專區", "gBXld7eeImo", "新增相簿、上傳照片，並讓有權限的人員瀏覽。"],
+  ["EIP", "會議室系統", "場地借用", "N9eeUiA312k", "快速預約與借用會議場地。"],
+  ["EIP", "會議室系統", "行事曆借用", "0hgMoKOA55g", "從行事曆新增設備、公務車等非會議場地借用。"],
+  ["EIP", "會議室系統", "設備借用申請單", "CuMnC8xA7mI", "透過電子簽核中的設備借用申請單完成預約。"],
+  ["EIP", "會議室系統", "週期性借用", "fquRX1Mwc9U", "建立固定週期重複發生的場地或設備借用。"],
+  ["EIP", "會議室系統", "保管人借用管理", "UZepDTJOlKI", "保管人處理借出、歸還或拒絕已預約的設備。"],
   ["EIP", "內容維護", "影音維護專區", "NztrbceNZr0", "上傳影音檔案並設定可觀看的人員。"],
-  ["EIP", "首頁內容", "公司語錄", "i6J3aG-mwkc", "設定公司精神與宗旨，顯示於員工首頁面板。"],
   ["EIP", "首頁內容", "活動看板", "qJ8NgIJqUqI", "以圖片輪播方式，在首頁面板傳達活動內容。"],
   ["EIP", "行事曆", "行事曆－新增工作與備忘", "RLIi5x9sWB8", "新增工作及備忘，並在日、週、月檢視中維護。"],
   ["EIP", "行事曆", "行事曆－新增交辦", "_PJNMscNM4E", "交辦工作、回報進度，並由交辦人進行完成審核。"],
@@ -202,8 +193,6 @@ const V = [
   ["EIP", "行事曆", "查看與維護他人行事曆", "IqNPy7iIstI", "查看他人行程，或在具備權限時協助維護。"],
   ["EIP", "行事曆", "組織行事曆", "f4H7QIiAe1s", "維護公司與部門事件，以及國定假日。"],
   ["EIP", "行事曆", "個人行事曆連結", "883a3ZAqwh0", "與 Google、Office 365、Outlook、iCloud 等行事曆同步。"],
-  ["EIP", "個人工具", "公事包", "Bqige7EF-Io", "存放常用檔案，並視權限分享給同仁下載。"],
-  ["EIP", "個人工具", "客戶資料庫", "5MP-2vWjnyM", "新增與查詢客戶資料。"],
   ["BPM", "申請者", "1-1 申請者－申請表單", "Z1fy31hQnRk", "找到需要申請的表單並開始填寫。"],
   ["BPM", "申請者", "1-2 申請者－填寫表單", "DyYHbYrDMy8", "填寫與送出表單，或代理他人填寫後送簽。"],
   ["BPM", "申請者", "1-3 申請者－查詢表單", "eZRykoSkM-w", "查詢本人或代理送審的表單，並使用作廢、取回與列印。"],
@@ -231,7 +220,7 @@ const V = [
   ["DMS", "目錄管理者", "目錄管理者 01－文件操作功能", "S9q75PJysl8", "管理作廢、銷毀、上下架、置換、讀者權限與紙本分發。"],
   ["DMS", "目錄管理者", "文件維護", "YUdEYMnhcXw", "調整目錄位置、搬移文件、作廢、銷毀並變更讀作者。"]
 ];
-const NAME = {ALL:"全部教學影片",EIP:"EIP 企業資訊入口",BPM:"BPM 簽核流程",DMS:"DMS 文管系統"};
+const NAME = {ALL:"全部教學影片",EIP:"首頁內容",BPM:"BPM 簽核流程",DMS:"DMS 文管系統"};
 const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const list = document.getElementById("list"), q = document.getElementById("q");
 const PLAY = '<span class="play"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span>';
@@ -239,6 +228,8 @@ const PLAY = '<span class="play"><svg width="12" height="12" viewBox="0 0 24 24"
 const cnt = {ALL:V.length,EIP:0,BPM:0,DMS:0};
 V.forEach(v => cnt[v[0]]++);
 document.querySelectorAll("[data-c]").forEach(e => e.textContent = cnt[e.dataset.c]);
+document.getElementById("heroCount").textContent = V.length;
+document.getElementById("shown").textContent = V.length;
 
 list.innerHTML = V.map(v => {
   const url = "https://youtu.be/" + v[3];
